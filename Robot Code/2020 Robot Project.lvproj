@@ -110,6 +110,8 @@ AddOutputFilter chunkFilter
 				<Item Name="Count Color.vi" Type="VI" URL="../Commands/Count Color.vi"/>
 				<Item Name="Go to Color.vi" Type="VI" URL="../Commands/Go to Color.vi"/>
 				<Item Name="balais.vi" Type="VI" URL="../commands/balais.vi"/>
+				<Item Name="elevateur.vi" Type="VI" URL="../../../../Robot Code/commands/elevateur.vi"/>
+				<Item Name="balais1.vi" Type="VI" URL="../../../../Robot Code/commands/balais1.vi"/>
 			</Item>
 			<Item Name="Util" Type="Folder">
 				<Item Name="ButtonPress.vi" Type="VI" URL="../Util/ButtonPress.vi"/>
