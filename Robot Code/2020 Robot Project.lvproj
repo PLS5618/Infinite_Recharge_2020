@@ -113,6 +113,7 @@ AddOutputFilter chunkFilter
 				<Item Name="balais.vi" Type="VI" URL="../commands/balais.vi"/>
 				<Item Name="elevateur.vi" Type="VI" URL="../../../../Robot Code/commands/elevateur.vi"/>
 				<Item Name="balais1.vi" Type="VI" URL="../../../../Robot Code/commands/balais1.vi"/>
+				<Item Name="tourne disque.vi" Type="VI" URL="../commands/tourne disque.vi"/>
 			</Item>
 			<Item Name="Util" Type="Folder">
 				<Item Name="ButtonPress.vi" Type="VI" URL="../Util/ButtonPress.vi"/>
