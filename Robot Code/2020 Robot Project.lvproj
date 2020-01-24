@@ -105,7 +105,7 @@ AddOutputFilter chunkFilter
 		<Item Name="Team Code" Type="Folder">
 			<Item Name="Commands" Type="Folder">
 				<Property Name="NI.SortType" Type="Int">3</Property>
-				<Item Name="bac.vi" Type="VI" URL="../commands/bac.vi"/>
+				<Item Name="bac.vi" Type="VI" URL="../Commands/bac.vi"/>
 				<Item Name="Get Color.vi" Type="VI" URL="../Commands/Get Color.vi"/>
 				<Item Name="Count Color.vi" Type="VI" URL="../commands/Count Color.vi"/>
 				<Item Name="Go to Color.vi" Type="VI" URL="../Commands/Go to Color.vi"/>
