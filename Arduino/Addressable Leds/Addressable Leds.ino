@@ -22,6 +22,7 @@ void setup() {
 	FastLED.show();
 	delay(2000);
 
+
 }
 
 void loop() {
