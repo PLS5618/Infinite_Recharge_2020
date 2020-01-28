@@ -51,26 +51,28 @@ CRGB leds[NUM_LEDS];
 63-End Game 5sec
 */
 
+
 int state(0);
+int CommPins[6] = { 8,9,10,11,12,13 };
 
 void setup() {
 	FastLED.addLeds<WS2812B, DATA_PIN, COLOR_ORDER>(leds, NUM_LEDS);
 
 	FastLED.clear();
 	FastLED.show();
-	delay(250);
+	delay(100);
 	FastLED.clear();
 	FastLED.setBrightness(MAX_BRIGHTNESS);
 	fill_solid(leds, NUM_LEDS, CRGB(125, 125, 125));
 	FastLED.show();
-	delay(2000);
+	delay(250);
 
-	pinMode(0, INPUT);
-	pinMode(1, INPUT);
-	pinMode(2, INPUT);
-	pinMode(3, INPUT);
-	pinMode(4, INPUT);
-	pinMode(5, INPUT);
+	pinMode(CommPins[0], INPUT);
+	pinMode(CommPins[1], INPUT);
+	pinMode(CommPins[2], INPUT);
+	pinMode(CommPins[3], INPUT);
+	pinMode(CommPins[4], INPUT);
+	pinMode(CommPins[5], INPUT);
 }
 
 void loop() {
@@ -122,7 +124,7 @@ void loop() {
 	case 0://off
 		break;
 	case 1://rainbow Autonome
-		fill_solid(leds, 150, CRGB(255,0,0));
+		fill_rainbow(leds, NUM_LEDS, millis()/2, 3.4);
 		break;
 
 
@@ -146,14 +148,14 @@ void loop() {
 	case 23: //- No Target 3
 	case 24: //- No target 4
 	case 25: //- Full(Won't Happen)
-		fill_solid(leds, (state-19)*20, CRGB(150, 150, 0));
+		fill_solid(leds, (state - 19) * 20, CRGB(150, 150, 0));
 		break;
 	case 26: //Target 0
 	case 27: //-Target 1
 	case 28: //-Target 2
 	case 29: //-Target 3
 	case 30: //-Target 4
-		fill_solid(leds, (state-25)*20, CRGB(0, 150, 150));
+		fill_solid(leds, (state - 25) * 20, CRGB(0, 150, 150));
 		break;
 
 
@@ -199,13 +201,13 @@ void autonomous() {
 
 int getComm()
 {
-	int x;
-	if (digitalRead(0) == HIGH) x += 1;
-	if (digitalRead(1) == HIGH) x += 2;
-	if (digitalRead(2) == HIGH) x += 4;
-	if (digitalRead(3) == HIGH) x += 8;
-	if (digitalRead(4) == HIGH) x += 16;
-	if (digitalRead(5) == HIGH) x += 32;
+	int x = 0;
+	if (digitalRead(CommPins[0]) == HIGH) x += 1;
+	if (digitalRead(CommPins[1]) == HIGH) x += 2;
+	if (digitalRead(CommPins[2]) == HIGH) x += 4;
+	if (digitalRead(CommPins[3]) == HIGH) x += 8;
+	if (digitalRead(CommPins[4]) == HIGH) x += 16;
+	if (digitalRead(CommPins[5]) == HIGH) x += 32;
 
 	return x;
 }
