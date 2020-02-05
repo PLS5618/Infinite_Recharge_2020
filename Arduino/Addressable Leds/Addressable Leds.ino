@@ -53,25 +53,16 @@ CRGB leds[NUM_LEDS];
 
 
 int state(0);
-int CommPins[6] = { 8,9,10,11,12,13 };
+int const CommPins[6] = { 8,9,10,11,12,13 };
 
-int const Zones[15][2] = {
-	{0,10},
-	{10,10},
-	{20,10},
-	{30,10},
-	{40,10},
-	{50,10},
-	{60,10},
-	{70,10},
-	{80,10},
-	{90,10},
-	{100,10},
-	{110,10},
-	{120,10},
-	{130,10},
-	{140,10}
-
+int const ZoneFull[2] = { 0,150 };
+int const ZoneMode[2] = { 50,50 };
+int const FillBars[5][2][2] = {
+	{{0,10},{140,10}},
+	{{10,10},{130,10}},
+	{{20,10},{120,10}},
+	{{30,10},{110,10}},
+	{{40,10},{100,10}}
 };
 
 void setup() {
@@ -151,7 +142,7 @@ void loop() {
 		fill_solid(leds, 150, CRGB(100, 0, 0));
 		break;
 	case 11://Turns Completed
-		flash(2, 100, { 0 , 150 }, CRGB(0, 255, 150));
+		flash(2, 100, ZoneFull, CRGB(0, 255, 150));
 			break;
 	case 12://Color Control in progress
 		fill_solid(leds, 150, CRGB(0, 0, 100));
@@ -218,7 +209,7 @@ void fill_zone(int const addresses[2], CRGB& color) {
 	fill_solid(&(leds[addresses[0]]), addresses[1], color);
 }
 
-void flash(int const t, int d, int const addresses[2], CRGB const& color) {
+void flash(int const& t, int const& d, int const addresses[2], CRGB const& color) {
 	for (int i = 0; i < t; i++)
 	{
 		fill_solid(&(leds[addresses[0]]), addresses[1], color);
