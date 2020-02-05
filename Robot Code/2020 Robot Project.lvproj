@@ -114,7 +114,6 @@ AddOutputFilter chunkFilter
 				<Item Name="tourne disque.vi" Type="VI" URL="../commands/tourne disque.vi"/>
 				<Item Name="Led Comm.vi" Type="VI" URL="../Commands/Led Comm.vi"/>
 				<Item Name="Lanceur.vi" Type="VI" URL="../Commands/Lanceur.vi"/>
-				<Item Name="PIGEON.vi" Type="VI" URL="../Commands/PIGEON.vi"/>
 			</Item>
 			<Item Name="Util" Type="Folder">
 				<Item Name="ButtonPress.vi" Type="VI" URL="../Util/ButtonPress.vi"/>
