@@ -109,16 +109,18 @@ AddOutputFilter chunkFilter
 				<Item Name="Get Color.vi" Type="VI" URL="../Commands/Get Color.vi"/>
 				<Item Name="Count Color.vi" Type="VI" URL="../Commands/Count Color.vi"/>
 				<Item Name="Go to Color.vi" Type="VI" URL="../Commands/Go to Color.vi"/>
-				<Item Name="balais.vi" Type="VI" URL="../commands/balais.vi"/>
+				<Item Name="balais.vi" Type="VI" URL="../Commands/balais.vi"/>
 				<Item Name="elevateur.vi" Type="VI" URL="../Commands/elevateur.vi"/>
-				<Item Name="tourne disque.vi" Type="VI" URL="../commands/tourne disque.vi"/>
+				<Item Name="tourne disque.vi" Type="VI" URL="../Commands/tourne disque.vi"/>
 				<Item Name="Led Comm.vi" Type="VI" URL="../Commands/Led Comm.vi"/>
 				<Item Name="Lanceur.vi" Type="VI" URL="../Commands/Lanceur.vi"/>
 			</Item>
 			<Item Name="Util" Type="Folder">
 				<Item Name="ButtonPress.vi" Type="VI" URL="../Util/ButtonPress.vi"/>
 				<Item Name="Deadzone.vi" Type="VI" URL="../Util/Deadzone.vi"/>
+				<Item Name="Drive Encoder Limit.vi" Type="VI" URL="../Util/Drive Encoder Limit.vi"/>
 				<Item Name="Lever.vi" Type="VI" URL="../Util/Lever.vi"/>
+				<Item Name="Reset Drive Enc.vi" Type="VI" URL="../Util/Reset Drive Enc.vi"/>
 				<Item Name="Square Joystick.vi" Type="VI" URL="../Util/Square Joystick.vi"/>
 				<Item Name="Switch.vi" Type="VI" URL="../Util/Switch.vi"/>
 				<Item Name="ValueChange.vi" Type="VI" URL="../Util/ValueChange.vi"/>
@@ -133,8 +135,6 @@ AddOutputFilter chunkFilter
 			<Item Name="Test.vi" Type="VI" URL="../Test.vi"/>
 			<Item Name="Vision Processing.vi" Type="VI" URL="../Vision Processing.vi"/>
 		</Item>
-		<Item Name="Drive Encoder Limit.vi" Type="VI" URL="../Util/Drive Encoder Limit.vi"/>
-		<Item Name="Reset Drive Enc.vi" Type="VI" URL="../Util/Reset Drive Enc.vi"/>
 		<Item Name="Robot Main.vi" Type="VI" URL="../Robot Main.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
