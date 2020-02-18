@@ -105,15 +105,15 @@ AddOutputFilter chunkFilter
 		<Item Name="Team Code" Type="Folder">
 			<Item Name="Commands" Type="Folder">
 				<Property Name="NI.SortType" Type="Int">3</Property>
-				<Item Name="bac.vi" Type="VI" URL="../Commands/bac.vi"/>
-				<Item Name="Get Color.vi" Type="VI" URL="../Commands/Get Color.vi"/>
-				<Item Name="Count Color.vi" Type="VI" URL="../Commands/Count Color.vi"/>
-				<Item Name="Go to Color.vi" Type="VI" URL="../Commands/Go to Color.vi"/>
-				<Item Name="balais.vi" Type="VI" URL="../Commands/balais.vi"/>
-				<Item Name="elevateur.vi" Type="VI" URL="../Commands/elevateur.vi"/>
-				<Item Name="tourne disque.vi" Type="VI" URL="../Commands/tourne disque.vi"/>
-				<Item Name="Led Comm.vi" Type="VI" URL="../Commands/Led Comm.vi"/>
-				<Item Name="Lanceur.vi" Type="VI" URL="../Commands/Lanceur.vi"/>
+				<Item Name="bac.vi" Type="VI" URL="../commands/bac.vi"/>
+				<Item Name="Get Color.vi" Type="VI" URL="../commands/Get Color.vi"/>
+				<Item Name="Count Color.vi" Type="VI" URL="../commands/Count Color.vi"/>
+				<Item Name="Go to Color.vi" Type="VI" URL="../commands/Go to Color.vi"/>
+				<Item Name="balais.vi" Type="VI" URL="../commands/balais.vi"/>
+				<Item Name="elevateur.vi" Type="VI" URL="../commands/elevateur.vi"/>
+				<Item Name="tourne disque.vi" Type="VI" URL="../commands/tourne disque.vi"/>
+				<Item Name="Led Comm.vi" Type="VI" URL="../commands/Led Comm.vi"/>
+				<Item Name="Lanceur.vi" Type="VI" URL="../commands/Lanceur.vi"/>
 			</Item>
 			<Item Name="Util" Type="Folder">
 				<Item Name="ButtonPress.vi" Type="VI" URL="../Util/ButtonPress.vi"/>
@@ -197,6 +197,7 @@ AddOutputFilter chunkFilter
 				<Item Name="CTRE_Phoenix_MotorControl_RefNumRegistrySet.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/WPI/ThirdParty/Phoenix-LabVIEW/Motor Controller/CTRE_Phoenix_MotorControl_RefNumRegistrySet.vi"/>
 				<Item Name="CTRE_Phoenix_MotorControl_Set.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/WPI/ThirdParty/Phoenix-LabVIEW/Motor Controller/CTRE_Phoenix_MotorControl_Set.vi"/>
 				<Item Name="CTRE_Phoenix_MotorControl_SetNeutralMode.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/WPI/ThirdParty/Phoenix-LabVIEW/Motor Controller/CTRE_Phoenix_MotorControl_SetNeutralMode.vi"/>
+				<Item Name="CTRE_Phoenix_MotorControl_SetQuadraturePosition_Enhanced.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/WPI/ThirdParty/Phoenix-LabVIEW/Motor Controller/Sensor/CTRE_Phoenix_MotorControl_SetQuadraturePosition_Enhanced.vi"/>
 				<Item Name="CTRE_Phoenix_MotorControl_SetSelectedSensorPosition.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/WPI/ThirdParty/Phoenix-LabVIEW/Motor Controller/Sensor/CTRE_Phoenix_MotorControl_SetSelectedSensorPosition.vi"/>
 				<Item Name="CTRE_Phoenix_MotorControl_SetSensorPhase.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/WPI/ThirdParty/Phoenix-LabVIEW/Motor Controller/Sensor/CTRE_Phoenix_MotorControl_SetSensorPhase.vi"/>
 				<Item Name="CTRE_Phoenix_MotorControl_UpdateRefNum.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/WPI/ThirdParty/Phoenix-LabVIEW/Motor Controller/CTRE_Phoenix_MotorControl_UpdateRefNum.vi"/>
@@ -899,7 +900,7 @@ AddOutputFilter chunkFilter
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToProject</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{6782B190-04E1-4A41-93AB-3F357B35791E}</Property>
 				<Property Name="Bld_targetDestDir" Type="Path">/home/lvuser/natinst/bin</Property>
-				<Property Name="Bld_version.build" Type="Int">4</Property>
+				<Property Name="Bld_version.build" Type="Int">2</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">startup.rtexe</Property>
 				<Property Name="Destination[0].path" Type="Path">/home/lvuser/natinst/bin/startup.rtexe</Property>
