@@ -1,0 +1,5 @@
+{
+    "board": "arduino:avr:uno",
+    "sketch": "AdressableLeds\\AdressableLeds.ino",
+    "port": "COM5"
+}
