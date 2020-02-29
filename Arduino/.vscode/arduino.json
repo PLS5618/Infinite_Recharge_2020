@@ -1,5 +1,6 @@
 {
     "board": "arduino:avr:uno",
     "sketch": "AdressableLeds\\AdressableLeds.ino",
-    "port": "COM5"
+    "port": "COM5",
+    "programmer": "Arduino as ISP"
 }
