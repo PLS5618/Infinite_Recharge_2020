@@ -11,7 +11,15 @@ bool warnTeleop(false);
 
 int state(0);
 int stateWas(0);
-int const CommPins[6] = {8, 9, 10, 11, 12, 13};
+int timesControlPanel(0);
+int const CommPins[6] = {7, 8, 9, 10, 11, 13};
+
+CRGB const ColorWheel[4] = {
+  CRGB(100,0,0),
+  CRGB(0,100,0),
+  CRGB(0,0,100),
+  CRGB(100,100,0)
+};
 
 int const ZoneFull[2] = {0, 150};
 int const ZoneMode[2] = {53, 47};
@@ -21,6 +29,15 @@ int const FillBars[5][2][2] = {
     {{23, 10}, {120, 10}},
     {{33, 10}, {110, 10}},
     {{43, 10}, {100, 10}}};
+int const ZoneLeft[2] = {77,73};
+int const ZoneRight[2] = {0,77};
+int const ZoneSplit5[5][2] = {
+  {0,30},
+  {30,30},
+  {60,30},
+  {90,30},
+  {120,30}
+};
 
 void setup()
 {
@@ -47,8 +64,23 @@ void setup()
   pinMode(CommPins[4], INPUT);
   pinMode(CommPins[5], INPUT);
 
-  // Serial.begin(9600);
+  //Serial.begin(9600);
 }
+
+// void loop()
+// {
+//   FastLED.clear();
+//     for (int i = 0; i < 6; i++)
+//   {
+//     if(digitalRead(CommPins[i])==HIGH)
+//     {
+//       fill_solid(&(leds[i]), 1, CRGB(255, 100, 0));
+//     }
+//     delay(5);
+//   }
+//     FastLED.show();
+
+// }
 
 void loop()
 {
@@ -60,7 +92,7 @@ void loop()
   }
   
   FastLED.clear();
-  // Serial.println(x);
+  //Serial.println(x);
 
   switch (state)
   {
@@ -72,20 +104,34 @@ void loop()
     break;
 
   case 2: // teleop begin
-    flash(3, 100, ZoneFull, CRGB(0, 255, 0));
+    flash(3, 200, ZoneFull, CRGB(0, 255, 0));
     break;
     
   case 10: //Doing turns
-    fill_solid(leds, 150, CRGB(100, 0, 0));
+    for (int i = 0; i < 5; i++)
+    {
+      timesControlPanel++;
+      if (timesControlPanel > 3)
+      {
+        timesControlPanel=0;
+      }
+
+      fill_zone(ZoneSplit5[i],ColorWheel[timesControlPanel]);
+    }
+    delay(150);
     break;
   case 11: //Turns Completed
-    flash(2, 100, ZoneFull, CRGB(0, 255, 150));
+    flash(2, 250, ZoneLeft, CRGB(0, 255, 150));
     break;
   case 12: //Color Control in progress
-    fill_zone(ZoneFull, CRGB(0, 0, 100));
+    fill_zone(ZoneSplit5[0], CRGB(255, 0, 0));
+    fill_zone(ZoneSplit5[1], CRGB(0, 255, 0));
+    fill_zone(ZoneSplit5[2], CRGB(0, 0, 255));
+    fill_zone(ZoneSplit5[3], CRGB(0, 255, 0));
+    fill_zone(ZoneSplit5[4], CRGB(255, 0, 0));
     break;
   case 13: //Color control done
-    fill_solid(leds, 150, CRGB(0, 255, 255));
+    flash(2, 250, ZoneRight, CRGB(0, 255, 150));
     break;
 
     //balayeuse
@@ -100,7 +146,7 @@ void loop()
   case 21: //- No Target 1
     symmetric_zone_fill(FillBars[0], CRGB(125, 125, 0));
   case 20: //No Target 0
-    fill_zone(ZoneMode[1], CRGB(255, 0, 0));
+    fill_zone(ZoneMode, CRGB(255, 0, 0));
     break;
 
   case 30: //-Target 4
