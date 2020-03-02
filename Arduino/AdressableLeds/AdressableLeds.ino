@@ -118,7 +118,7 @@ void loop()
 
       fill_zone(ZoneSplit5[i],ColorWheel[timesControlPanel]);
     }
-    delay(150);
+    delay(180);
     break;
   case 11: //Turns Completed
     flash(2, 250, ZoneLeft, CRGB(0, 255, 150));
@@ -135,8 +135,10 @@ void loop()
     break;
 
     //balayeuse
-  case 25: //- Full(Won't Happen, will change mode)
-    symmetric_zone_fill(FillBars[4], CRGB(125, 125, 0));
+  case 25: //- Newly Full
+    flash(3,200,ZoneFull, CRGB(255,100,0));
+    break;
+
   case 24: //- No target 4
     symmetric_zone_fill(FillBars[3], CRGB(125, 125, 0));
   case 23: //- No Target 3
@@ -146,19 +148,24 @@ void loop()
   case 21: //- No Target 1
     symmetric_zone_fill(FillBars[0], CRGB(125, 125, 0));
   case 20: //No Target 0
-    fill_zone(ZoneMode, CRGB(255, 0, 0));
+    fill_zone(ZoneMode, CRGB(255, 100, 0));
     break;
 
   case 30: //-Target 4
-    symmetric_zone_fill(FillBars[3], CRGB(125, 125, 0));
+    symmetric_zone_fill(FillBars[3], CRGB(0, 255, 0));
   case 29: //-Target 3
-    symmetric_zone_fill(FillBars[2], CRGB(125, 125, 0));
+    symmetric_zone_fill(FillBars[2], CRGB(200, 255, 0));
   case 28: //-Target 2
-    symmetric_zone_fill(FillBars[1], CRGB(125, 125, 0));
+    symmetric_zone_fill(FillBars[1], CRGB(255, 200, 0));
   case 27: //-Target 1
-    symmetric_zone_fill(FillBars[0], CRGB(125, 125, 0));
+    symmetric_zone_fill(FillBars[0], CRGB(255, 100, 0));
+    fill_zone(ZoneMode, CRGB(255, 100, 0));
+    break;
   case 26: //Target 0
-    fill_zone(ZoneMode, CRGB(255, 255, 0));
+    fill_zone(ZoneMode, CRGB(255, 100, 0));
+    symmetric_zone_fill(FillBars[0],CRGB(255,0,0));
+    symmetric_zone_fill(FillBars[1],CRGB(255,0,0));
+    symmetric_zone_fill(FillBars[2],CRGB(255,0,0));
     break;
 
   case 40: //-Target Acquisition / not ready
@@ -179,7 +186,7 @@ void loop()
     break;
 
   case 46: //-Throwing done
-    fill_solid(leds, 150, CRGB(255, 255, 255));
+    flash(3,200,ZoneFull, CRGB(255,255,255));
     break;
 
     //Ballons
@@ -198,33 +205,32 @@ void loop()
     symmetric_zone_fill(FillBars[0], CRGB(255, 0, 0));
     break;
 
-#pragma region EndGame
   case 60: //-End Game 30 sec
-    flash(5, 100, ZoneMode, CRGB(255, 0, 255));
+    flash(2, 200, ZoneFull, CRGB(255, 0, 255));
+    flash(5, 200, ZoneFull, CRGB(255, 0, 0));
+    fill_zone(ZoneFull,CRGB(0,255,0));
     break;
-    // for (size_t i = 0; i < 5; i++)
-    // {
-    //   symmetric_zone_fill(FillBars[0], CRGB(255,0,255));
-    //   FastLED.show();
-    //   delay(100);
-    //   FastLED.clear();
-    //   FastLED.show();
-    //   delay(100);
-    // }
   case 61: //-End Game 20 sec
-    flash(5, 100, ZoneMode, CRGB(255, 0, 175));
+    flash(2, 200, ZoneFull, CRGB(255, 0, 255));
+    flash(5, 100, ZoneFull, CRGB(255, 0, 0));
+    fill_zone(ZoneFull,CRGB(255,255,0));
     break;
-  case 62: //-End Game 15 sec
-    flash(5, 100, ZoneMode, CRGB(255, 0, 75));
+  case 62: //-End Game 10 sec
+    flash(2, 200, ZoneFull, CRGB(255, 0, 255));
+    flash(5, 100, ZoneFull, CRGB(255, 0, 0));
+    fill_zone(ZoneFull,CRGB(255,50,0));
     break;
   case 63: //-End Game 5sec
-    flash(5, 100, ZoneMode, CRGB(255, 0, 0));
+    flash(2, 200, ZoneFull, CRGB(255, 0, 255));
+    flash(5, 100, ZoneFull, CRGB(255, 0, 0));
+    fill_zone(ZoneFull,CRGB(255,0,0));
     break;
   }
-#pragma endregion
+
 
   delay(50);
   FastLED.show();
+  if (state>=60) delay(500);
 }
 
 void fill_zone(int const addresses[2], CRGB const &color)
