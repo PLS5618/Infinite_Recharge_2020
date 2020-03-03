@@ -24,7 +24,7 @@ CRGB const ColorWheel[4] = {
 int const ZoneFull[2] = {0, 150};
 int const ZoneMode[2] = {53, 47};
 int const FillBars[5][2][2] = {
-    {{0, 20}, {132, 18}},
+    {{0, 21}, {132, 18}},
     {{21, 8}, {124, 8}},
     {{29, 8}, {116, 8}},
     {{37, 8}, {108, 8}},
@@ -136,7 +136,7 @@ void loop()
 
     //balayeuse
   case 25: //- Newly Full
-    flash(3,200,ZoneFull, CRGB(255,100,0));
+    flash(4,200,ZoneFull, CRGB(255,100,0));
     break;
 
   case 24: //- No target 4
@@ -152,11 +152,11 @@ void loop()
     break;
 
   case 30: //-Target 4
-    symmetric_zone_fill(FillBars[3], CRGB(0, 255, 0));
+    symmetric_zone_fill(FillBars[3], CRGB(255, 255, 0));
   case 29: //-Target 3
-    symmetric_zone_fill(FillBars[2], CRGB(200, 255, 0));
+    symmetric_zone_fill(FillBars[2], CRGB(0, 255, 0));
   case 28: //-Target 2
-    symmetric_zone_fill(FillBars[1], CRGB(255, 200, 0));
+    symmetric_zone_fill(FillBars[1], CRGB(0, 0, 255));
   case 27: //-Target 1
     symmetric_zone_fill(FillBars[0], CRGB(255, 100, 0));
     fill_zone(ZoneMode, CRGB(255, 100, 0));
@@ -169,17 +169,17 @@ void loop()
     break;
 
   case 40: //-Target Acquisition / not ready
-    fill_zone(ZoneFull, CRGB(50, 0, 125));
+    fill_zone(ZoneFull, CRGB(255, 0, 100));
     break;
 
   case 41: //-Target Acquired
-    symmetric_zone_fill(FillBars[4], CRGB(0, 125, 0));
+    symmetric_zone_fill(FillBars[4], CRGB(0, 255, 0));
   case 42: //-4 left
-    symmetric_zone_fill(FillBars[3], CRGB(100, 255, 0));
+    symmetric_zone_fill(FillBars[3], CRGB(255, 255, 0));
   case 43: //-3 left
-    symmetric_zone_fill(FillBars[2], CRGB(200, 255, 0));
+    symmetric_zone_fill(FillBars[2], CRGB(0, 255, 0));
   case 44: //-2 left
-    symmetric_zone_fill(FillBars[1], CRGB(255, 200, 0));
+    symmetric_zone_fill(FillBars[1], CRGB(0, 0, 255));
   case 45: //-1 left
     symmetric_zone_fill(FillBars[0], CRGB(255, 100, 0));
     fill_zone(ZoneMode, CRGB(0, 0, 255));
@@ -193,11 +193,11 @@ void loop()
   case 55: //-5 rainbow
     symmetric_zone_fill(FillBars[4], CRGB(0, 255, 0));
   case 54: //-4
-    symmetric_zone_fill(FillBars[3], CRGB(100, 255, 0));
+    symmetric_zone_fill(FillBars[3], CRGB(255, 255, 0));
   case 53: //-3
-    symmetric_zone_fill(FillBars[2], CRGB(200, 255, 0));
+    symmetric_zone_fill(FillBars[2], CRGB(0, 255, 0));
   case 52: //-2
-    symmetric_zone_fill(FillBars[1], CRGB(255, 200, 0));
+    symmetric_zone_fill(FillBars[1], CRGB(0, 0, 255));
   case 51: //-1
     symmetric_zone_fill(FillBars[0], CRGB(255, 100, 0));
     break;
@@ -209,22 +209,22 @@ void loop()
 
   case 60: //-End Game 30 sec
     flash(2, 200, ZoneFull, CRGB(255, 0, 255));
-    flash(5, 200, ZoneFull, CRGB(255, 0, 0));
+    flash(7, 150, ZoneFull, CRGB(255, 0, 0));
     fill_zone(ZoneFull,CRGB(0,255,0));
     break;
   case 61: //-End Game 20 sec
     flash(2, 200, ZoneFull, CRGB(255, 0, 255));
-    flash(5, 200, ZoneFull, CRGB(255, 0, 0));
+    flash(7, 150, ZoneFull, CRGB(255, 0, 0));
     fill_zone(ZoneFull,CRGB(255,255,0));
     break;
   case 62: //-End Game 10 sec
     flash(2, 200, ZoneFull, CRGB(255, 0, 255));
-    flash(5, 200, ZoneFull, CRGB(255, 0, 0));
+    flash(7, 150, ZoneFull, CRGB(255, 0, 0));
     fill_zone(ZoneFull,CRGB(255,50,0));
     break;
   case 63: //-End Game 5sec
     flash(2, 200, ZoneFull, CRGB(255, 0, 255));
-    flash(5, 200, ZoneFull, CRGB(255, 0, 0));
+    flash(7, 150, ZoneFull, CRGB(255, 0, 0));
     fill_zone(ZoneFull,CRGB(255,0,0));
     break;
   }
